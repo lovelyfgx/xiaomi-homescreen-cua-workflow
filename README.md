@@ -1,10 +1,28 @@
-# Xiaomi Home screen+ × Computer Use
+# AI Phone Control on Mac with Xiaomi Home screen+
 
-[简体中文](#简体中文)
+**Mac 控制小米手机 · AI 手机操作实践**
+
+[简体中文](#简体中文) · [Before you start](#before-you-start) · [Quick reproduction](#smallest-reproduction-launch-and-verify-one-harmless-app) · [Report a result](#sanitized-reproduction-report)
 
 A practical record of operating a Xiaomi phone from a Mac through **Xiaomi Interconnectivity → Home screen+ → a computer-use assistant**. The useful part is the verification loop and recovery procedure: observe the live window, take one action, then check the phone's new state.
 
 **Status:** documentation-only initial edition. The supplied field notes report successful operations on one setup. No reusable phone-control source code was supplied, and no hardware run was repeated while preparing this edition. This repository contains no SDK, driver, proprietary tool implementation, or ready-to-run automation. See [the evidence and test record](#evidence-and-validation).
+
+## Before you start
+
+This guide is for **Mac users with a compatible Xiaomi phone who already have an authorized AI client capable of controlling native Mac windows**. It describes AI phone control through an existing Home screen+ mirror; it does not install or supply that AI capability.
+
+| Check | Ready to try when… | If unavailable |
+| --- | --- | --- |
+| Phone mirroring | You can manually open and use the full Home screen+ window in Xiaomi Interconnectivity. | Follow the vendor’s supported setup first. |
+| Native computer use | Your AI client can observe the live native Mac mirror and perform a bounded input action with your permission. | A normal chat subscription or browser-only tool is not proof of this access. This guide has no universal installer or verified client onboarding path. |
+| Owner presence | You can identify the intended app/account, handle authentication and confirm the result yourself. | Keep the task blocked until the owner is present. |
+
+The original AI client build and its public availability were not recorded. **Do not buy a subscription based on this guide alone.** Confirm current native computer-use availability in that client’s official documentation and your own installation. Client compatibility and access are unverified here.
+
+**Recorded setup metadata:** Mac model/macOS, phone model/OS, Xiaomi Interconnectivity version, and AI client/build remain **not recorded**. The dependency table below separates published vendor requirements from those missing measurements. If you try the workflow, complete the [sanitized report](#sanitized-reproduction-report); a blocked attempt is useful evidence too.
+
+For readers searching for **AI control of an Android phone on Mac**, this practice note covers Xiaomi Home screen+ specifically. Other Android brands, iPhone workflows, remote unattended control, and universal Android automation are outside its verified scope.
 
 ## What you need
 
@@ -84,6 +102,18 @@ Start with this README or the [Chinese version](#简体中文), then use the two
 基于真实 **Mac → 小米互联服务 → Home screen+ 完整手机投屏 → CUA 电脑操作助手** 的实践记录。核心价值是每一步都核验：看实时窗口，做一个动作，再看新画面。
 
 **当前仅交付实践文档与模板。** 提供的现场说明记录了单套环境上的成功操作；没有附独立控制源码，本次整理也没有重新操作 Mac 或手机。项目不提供 SDK、驱动、厂商软件、专属 CUA 实现或可直接运行的自动化程序。详见[验证记录](#evidence-and-validation)。
+
+### 开始前：先确认这三项
+
+适用人群：**使用 Mac、兼容小米手机，并已拥有原生 Mac 窗口操作能力的 AI 客户端的用户。** 本文分享“小米互联完整投屏 + AI 观察、操作与核验”的方法。
+
+1. 先手动打开并操作 Home screen+ 完整投屏，确认厂商连接正常。
+2. 确认自己的 AI 客户端确实能观察并操作 Mac 原生投屏窗口。普通聊天订阅或浏览器控制能力，不能证明具备这项权限；本文尚无已验证的通用安装和开通流程。
+3. 本人在旁，负责身份验证、辨认账号与确认结果。
+
+原实测的 AI 客户端版本和公开可用性没有记录。**不要仅凭本指南购买订阅**；先核对该客户端的官方说明及自己安装环境中的实际能力。
+
+待补实测信息：Mac 型号与 macOS、手机型号与系统、小米互联版本、AI 客户端名称与版本。当前均标为“未记录”，不把其他设备经历当成本次环境证据。复现成功或遇到阻塞，都可以按[测试模板](#sanitized-reproduction-report)反馈。
 
 ### 依赖与权限
 
@@ -268,3 +298,20 @@ Useful contributions are small: a sanitized reproduction result, a version-speci
 5. Submit only material you can license under the repository's MIT license; identify and retain any authorized third-party notices. Do not copy vendor software or confidential documentation.
 
 For an accidental secret exposure, do not repeat the secret in a public issue. Stop sharing the affected material and use the relevant service's official revocation procedure. If private vulnerability reporting is available on the repository, use it; no dedicated private contact channel is promised by this initial edition.
+
+---
+
+## Record a short demo
+
+**Status: proposed recording plan; no demonstration video has been recorded or published for this project.**
+
+Record one 30–45 second, owner-supervised run using only a harmless app such as Calculator:
+
+1. Show the public model/version labels for the host OS, phone OS, mirroring app and AI client; exclude device identifiers, pairing information and account names.
+2. Show the authorized instruction to open Calculator through the existing full Home screen+ mirror.
+3. Show the resulting app screen and the owner’s confirmation. Keep waits or failures visible; label any cuts and do not present a simulated or accelerated action as a real-time hardware result.
+4. Stop AI control and verify that mirroring/input has ended. Record any unconfirmed step as unconfirmed.
+
+For a reproduction report, note the versions and the actual outcome using the template above. A recording does not establish broad compatibility or unattended reliability.
+
+录制建议：用 30–45 秒展示“环境版本 → 明确指令 → AI 打开计算器 → 核验画面 → 结束并确认断开”。此处只是录制计划，当前没有已发布演示视频或新增硬件测试。
