@@ -6,7 +6,14 @@
 
 A practical record of operating a Xiaomi phone from a Mac through **Xiaomi Interconnectivity → Home screen+ → a computer-use assistant**. The useful part is the verification loop and recovery procedure: observe the live window, take one action, then check the phone's new state.
 
-**Status:** documentation-only initial edition. The supplied field notes report successful operations on one setup. No reusable phone-control source code was supplied, and no hardware run was repeated while preparing this edition. This repository contains no SDK, driver, proprietary tool implementation, or ready-to-run automation. See [the evidence and test record](#evidence-and-validation).
+**Status:** documentation and templates, now accompanied by a sanitized hardware follow-up from one setup. This repository contains no SDK, driver, proprietary tool implementation, or ready-to-run automation. See [the evidence and test record](#evidence-and-validation).
+
+
+**2026-10-23 recovery update:** direct phone control recovered after the assistant and full phone mirror were placed on the same ordinary Mac desktop. Calculator visibly returned **12 × 34 = 408**. After a Mac-lock interruption and owner unlock, a separate demonstration showed **7 + 5 = 12**, followed by projection closure and a fresh view of **Home screen+ → Turn on**. A 40-second edited video and a 65.033-second original-timing video were prepared locally from 81 live screenshot samples; they are not continuous system recordings and are not published or included here. See the [control recovery report](reports/2026-10-23-control-recovery.md) and the [earlier blocked stage](reports/2026-10-23-blocked-reproduction.md).
+
+**2026-10-24 reliability follow-up:** coordinate input failed again during a later session, including after the owner reported the same-desktop arrangement and enabled the mirror pushpin. Live screenshots, menu navigation and some keyboard input still worked. Neither same-desktop placement nor pinning is a verified durable fix. The successful Calculator demonstration remains valid evidence of that completed run.
+
+**2026-10-25 continuation:** after the owner opened and brought forward the full mirror, the original CUA interface completed repeated coordinate clicks and drags through usage statistics, system information, storage, notifications and battery pages, then returned to Home. No `noWindowsAvailable` error occurred in this continuation. This observation does not establish foregrounding as the cause or a sufficient fix. My device visibly reported **HyperOS 3.0.5.0.VMRCNXM**; Calculator version remains unverified. See the [latest continuation](reports/2026-10-23-control-recovery.md#successful-continuation--2026-10-25).
 
 ## Before you start
 
@@ -18,9 +25,9 @@ This guide is for **Mac users with a compatible Xiaomi phone who already have an
 | Native computer use | Your AI client can observe the live native Mac mirror and perform a bounded input action with your permission. | A normal chat subscription or browser-only tool is not proof of this access. This guide has no universal installer or verified client onboarding path. |
 | Owner presence | You can identify the intended app/account, handle authentication and confirm the result yourself. | Keep the task blocked until the owner is present. |
 
-The original AI client build and its public availability were not recorded. **Do not buy a subscription based on this guide alone.** Confirm current native computer-use availability in that client’s official documentation and your own installation. Client compatibility and access are unverified here.
+The original field note omitted the AI client build. The follow-up records installed host metadata, but does not establish public availability or subscription eligibility. **Do not buy a subscription based on this guide alone.** Confirm current native computer-use availability in that client’s official documentation and your own installation.
 
-**Recorded setup metadata:** Mac model/macOS, phone model/OS, Xiaomi Interconnectivity version, and AI client/build remain **not recorded**. The dependency table below separates published vendor requirements from those missing measurements. If you try the workflow, complete the [sanitized report](#sanitized-reproduction-report); a blocked attempt is useful evidence too.
+**Measured follow-up setup:** MacBook Pro (`MacBookPro17,1`), macOS 26.6.2 (25G83), Xiaomi Interconnectivity 3.0.200 (566), and Redmi Note 12 Turbo. Installed host app metadata reads ChatGPT 26.1016.62342 (21477); the current session exposed native Mac window observation and input. Phone OS was later verified in My device on 2026-10-25 as **HyperOS 3.0.5.0.VMRCNXM**. Phone interconnectivity components and Calculator versions remain **unverified**. The [environment table](reports/2026-10-23-blocked-reproduction.md#measured-environment) records the evidence limits. If you try the workflow, complete the [sanitized report](#sanitized-reproduction-report).
 
 For readers searching for **AI control of an Android phone on Mac**, this practice note covers Xiaomi Home screen+ specifically. Other Android brands, iPhone workflows, remote unattended control, and universal Android automation are outside its verified scope.
 
@@ -28,18 +35,18 @@ For readers searching for **AI control of an Android phone on Mac**, this practi
 
 | Dependency | Requirement and evidence |
 | --- | --- |
-| Host | A Mac with Xiaomi Interconnectivity installed from the [official App Store listing](https://apps.apple.com/us/app/xiaomi-interconnectivity/id6673908449?platform=mac). Exact original Mac model and macOS version were not recorded in the supplied field notes. |
-| Phone | A Xiaomi phone on which Home screen+ actually works. Exact original phone model and OS version were not recorded. Do not infer universal Redmi/POCO support. |
+| Host | A Mac with Xiaomi Interconnectivity installed from the [official App Store listing](https://apps.apple.com/us/app/xiaomi-interconnectivity/id6673908449?platform=mac). The follow-up used the measured Mac setup above. |
+| Phone | A Xiaomi phone on which Home screen+ actually works. The follow-up observed a Redmi Note 12 Turbo, with HyperOS 3.0.5.0.VMRCNXM verified in My device on 2026-10-25. Do not infer universal Redmi/POCO support. |
 | Vendor compatibility | The listing checked on 2026-10-23 states HyperOS 2, Device interconnectivity services ≥16.00.50 and Xiaomi Share ≥3.3.0. These are published prerequisites, **not the measured versions of the original test** or a guarantee of compatibility. Check the current listing for your device. |
 | Connection | The owner must first make the vendor's normal connection and Home screen+ work manually. This project does not replace pairing or authentication. |
-| Assistant | An already-authorized computer-use environment that can observe and interact with **native Mac windows**. A text-only chat or browser-only controller is insufficient. The original CUA client/version was not recorded; access is not supplied here. |
+| Assistant | An already-authorized computer-use environment that can observe and interact with **native Mac windows**. A text-only chat or browser-only controller is insufficient. Installed follow-up host metadata is recorded above; access is not supplied here. |
 | Permission | Owner consent to phone control, vendor pairing/screen-sharing prompts, and the screen-capture/accessibility permissions required by that specific computer-use client. Exact original permission toggles were not recorded. The owner reviews prompts; do not grant broad permissions automatically. |
 
 No ADB, root, app API integration, or chat-database access was used in the recorded method. This does not mean those are the requirements of other products or platforms.
 
 ## Smallest reproduction: launch and verify one harmless app
 
-This procedure is derived from the recorded full-screen workflow. This exact harmless acceptance case has **not** been rerun for this edition.
+This procedure uses the full phone projection. The follow-up verified Calculator navigation, arithmetic, and projection closure in one setup. If coordinate input fails, inspect current window visibility; moving both windows onto one ordinary desktop restored one earlier phase, but later failures recurred. Verify one harmless action in the current session.
 
 1. Use your own devices, remain present, and put the phone on a non-sensitive home page. Choose a harmless target such as Calculator; avoid exposing notifications, private chats, or account pages to the assistant.
 2. Open Xiaomi Interconnectivity on the Mac. Complete its normal connection yourself if needed. Choose **Home screen+ → On / 开启** to open the **full phone home screen**. In the recorded setup, launching an individual app from the interconnectivity home page was unreliable.
@@ -60,7 +67,8 @@ For a later, separately authorized write test, the original notes describe creat
 | Individual-app projection stalls or displays incorrectly | Return to the vendor app and try the full Home screen+ window. This is one setup's observation, not a universal fix. |
 | An app has multiple account/clone icons | Have the owner identify the intended account. Badge conventions are device-specific; never assume an unbadged icon is always the main account. |
 | Pasted Chinese text is stale | Inspect the entire field before committing anything. The original setup sometimes pasted previous clipboard contents. Ctrl+A worked in its phone form; Cmd+A was unreliable. These shortcuts are not universally tested. |
-| Window missing, screenshot failure, or `noWindowsAvailable` | Reinspect the current windows. Do not infer phone lock from an error alone. Stop blind actions; if necessary close the projection and reconnect through Home screen+. |
+| `noWindowsAvailable` while a mirror image is still readable | Inspect whether the full phone window is on the current visible desktop. Same-desktop placement restored an earlier phase, but later input failed again even after that arrangement and pinning were reported. Raising/reconnecting alone was also insufficient. Distinguish a missing visibility flag from an observed off-screen flag; the current failure cause remains unconfirmed. |
+| Screenshot failure after an input action | Inspect a fresh phone image before repeating the action. This run included a capture error after Settings had already opened. |
 | Layout, scale, page, or connection changed | Observe again. Coordinates from an earlier frame are invalid evidence. |
 | Password/Touch ID, screen-time restriction, or other block | Stop and let the owner handle it. This guide does not require changing restrictions or circumventing authentication. |
 
@@ -75,15 +83,15 @@ For a later, separately authorized write test, the original notes describe creat
 ## End control, disconnect, and revoke access
 
 1. Tell the assistant to stop; verify no further input occurs. End its computer-control session through that client's own controls.
-2. Close/stop the Home screen+ session in Xiaomi Interconnectivity. Confirm the mirror is gone and further Mac input is not reaching the phone. Do not assume window closure revokes the persistent device relationship.
+2. Close/stop the Home screen+ session in Xiaomi Interconnectivity. Check that the mirror is gone and **Home screen+ → Turn on** is shown. This observable closure does not prove that every possible input route is disconnected or that the persistent device relationship is revoked.
 3. If you no longer want the relationship, use the vendor's current device-removal/unpairing UI. For lasting removal of assistant access, review and revoke that client's screen-capture/accessibility permissions in macOS System Settings. Exact labels vary by version.
-4. These disconnect/revocation steps are a recommended owner checklist, **not a recorded successful teardown test**. If disconnection is uncertain, stop the client/vendor apps and verify on the phone before leaving it unattended.
+4. The follow-up visibly verified projection closure. Persistent unpairing, permission revocation, and phone-side testing of later Mac input were not performed. If broader disconnection is needed, verify those separately before leaving the device unattended.
 
 ## Verified and unverified
 
 The supplied notes report app launching, reading app information, and a saved calendar reminder reopened for verification. They also report an owner-confirmed physical result, which is deliberately excluded from the example. They do not provide raw traces, version metadata, repeat counts, timings, or a teardown test.
 
-No new Mac/phone interaction, independent device reproduction, unattended operation, Windows/Linux/iOS support, or general app compatibility is claimed. [Validation details](#evidence-and-validation) distinguish historical reports from preparation-time checks.
+The follow-up adds live Mac/phone navigation, two observed arithmetic results, local sampled-frame videos, and verified projection closure. It does not establish independent device reproduction, unattended operation, Windows/Linux/iOS support, or general app compatibility. [Validation details](#evidence-and-validation) distinguish the original notes, initial offline preparation, and live follow-up.
 
 ## Contents and contribution
 
@@ -101,7 +109,14 @@ Start with this README or the [Chinese version](#简体中文), then use the two
 
 基于真实 **Mac → 小米互联服务 → Home screen+ 完整手机投屏 → CUA 电脑操作助手** 的实践记录。核心价值是每一步都核验：看实时窗口，做一个动作，再看新画面。
 
-**当前仅交付实践文档与模板。** 提供的现场说明记录了单套环境上的成功操作；没有附独立控制源码，本次整理也没有重新操作 Mac 或手机。项目不提供 SDK、驱动、厂商软件、专属 CUA 实现或可直接运行的自动化程序。详见[验证记录](#evidence-and-validation)。
+**当前交付实践文档、模板及单套环境的脱敏复测报告。** 项目不提供 SDK、驱动、厂商软件、专属 CUA 实现或可直接运行的自动化程序。详见[验证记录](#evidence-and-validation)。
+
+
+**2026-10-23 恢复结果：** 用户退出助手全屏、让助手与完整手机投屏同处普通桌面后，连续点击和拖动恢复，计算器实际显示 **12 × 34 = 408**。中途 Mac 锁定后由本人解锁，随后独立演示得到 **7 + 5 = 12**，关闭投屏后新画面确认 **Home screen+ → Turn on**。本地已制作 40 秒短版和约 65.033 秒原时序版，来源为 81 张实时采样截图，并非连续系统录屏；视频没有发布，也不包含在公开包中。详见[控制恢复报告](reports/2026-10-23-control-recovery.md)及[早期受阻记录](reports/2026-10-23-blocked-reproduction.md)。
+
+**2026-10-24 稳定性续测：** 后续会话再次出现坐标输入失败；本人确认同桌面并开启图钉后仍失败，实时截图、菜单导航及部分键盘输入继续可用。因此，同桌面与置顶均不能当作已验证的长期修复。此前完成的计算器演示仍然是那一轮操作成功的证据。
+
+**2026-10-25 续测：** 本人打开完整投屏并置前后，原 CUA 连续坐标点击和拖动成功，助手独立进入使用统计、系统、存储、通知和电池页面，最后回到手机主屏幕。本次未出现 `noWindowsAvailable`，但不能据此把置前认定为根因或充分修复，也不承诺无人值守。My device 已核验系统为 **HyperOS 3.0.5.0.VMRCNXM**，计算器版本仍未核实。详见[最新续测记录](reports/2026-10-23-control-recovery.md#successful-continuation--2026-10-25)。
 
 ### 开始前：先确认这三项
 
@@ -111,26 +126,26 @@ Start with this README or the [Chinese version](#简体中文), then use the two
 2. 确认自己的 AI 客户端确实能观察并操作 Mac 原生投屏窗口。普通聊天订阅或浏览器控制能力，不能证明具备这项权限；本文尚无已验证的通用安装和开通流程。
 3. 本人在旁，负责身份验证、辨认账号与确认结果。
 
-原实测的 AI 客户端版本和公开可用性没有记录。**不要仅凭本指南购买订阅**；先核对该客户端的官方说明及自己安装环境中的实际能力。
+原现场说明没有记录 AI 客户端版本，后续复测补充了已安装宿主的元数据；这些信息不能证明公开可用性或订阅资格。**不要仅凭本指南购买订阅**；先核对该客户端的官方说明及自己安装环境中的实际能力。
 
-待补实测信息：Mac 型号与 macOS、手机型号与系统、小米互联版本、AI 客户端名称与版本。当前均标为“未记录”，不把其他设备经历当成本次环境证据。复现成功或遇到阻塞，都可以按[测试模板](#sanitized-reproduction-report)反馈。
+复测环境：MacBook Pro（`MacBookPro17,1`）、macOS 26.6.2（25G83）、小米互联服务 3.0.200（566）、Redmi Note 12 Turbo；已安装宿主应用元数据显示 ChatGPT 26.1016.62342（21477），当前会话具备原生 Mac 窗口观察和输入工具。2026-10-25 在 My device 核验手机系统为 HyperOS 3.0.5.0.VMRCNXM；手机互联组件及计算器版本仍未核实。详见[环境表](reports/2026-10-23-blocked-reproduction.md#measured-environment)。复现成功或遇到阻塞，都可以按[测试模板](#sanitized-reproduction-report)反馈。
 
 ### 依赖与权限
 
 | 项目 | 要求与证据边界 |
 | --- | --- |
-| Mac | 安装[小米官方 App Store 应用](https://apps.apple.com/us/app/xiaomi-interconnectivity/id6673908449?platform=mac)。现场说明未记录原 Mac 型号和 macOS 版本。 |
-| 手机 | 需要能实际运行 Home screen+ 的小米手机。原机型、系统版本未记录，不能推断所有 Redmi/POCO 都支持。 |
+| Mac | 安装[小米官方 App Store 应用](https://apps.apple.com/us/app/xiaomi-interconnectivity/id6673908449?platform=mac)。后续复测的 Mac 型号和系统版本见上文。 |
+| 手机 | 需要能实际运行 Home screen+ 的小米手机。后续复测观察到 Redmi Note 12 Turbo；2026-10-25 在 My device 核验 HyperOS 3.0.5.0.VMRCNXM，不能推断所有 Redmi/POCO 都支持。 |
 | 厂商兼容要求 | 2026-10-23 查到的应用说明列出 HyperOS 2、跨设备互联服务 ≥16.00.50、小米互传 ≥3.3.0。这是厂商要求，不是原实测版本，也不保证你的设备可用；以当前官方说明为准。 |
 | 连接 | 先由本人通过厂商正常流程完成连接，确认能手动操作完整投屏。本项目不替代配对和身份验证。 |
-| AI 环境 | 必须已经具备观察与操作 Mac 原生窗口的电脑操作能力。纯文字聊天、只能控制网页的工具不足以复现；原 CUA 客户端及版本未记录，本项目不提供该能力。 |
+| AI 环境 | 必须已经具备观察与操作 Mac 原生窗口的电脑操作能力。纯文字聊天、只能控制网页的工具不足以复现；后续复测记录了宿主元数据，本项目不提供该能力。 |
 | 权限 | 本人同意控制手机，审阅厂商配对/屏幕共享提示，以及具体电脑操作客户端要求的屏幕录制、辅助功能权限。原权限开关清单未记录，不自动授予广泛权限。 |
 
 原方法未使用 ADB、Root、App 接口或聊天数据库读取。不要据此推论其他产品的实现。
 
 ### 最小复现：打开一个无敏感内容的 App 并核验
 
-此案例从原有完整投屏流程整理而来；这个具体的低风险验收案例在本次交付中尚未重测。
+后续复测已在单套环境中验证计算器导航、运算结果和关闭投屏。坐标输入失败时先检查窗口可见性；同普通桌面曾恢复一个阶段，后续仍复发，必须在当前会话核验一次无敏感动作。
 
 1. 使用自己的设备，本人在旁。将手机停在无敏感内容的桌面，选计算器等简单目标；避免让 AI 看见通知、私人聊天或账号页。
 2. 在 Mac 打开小米互联服务，按正常方式连接。选择 **Home screen+ → On／开启**，进入完整手机桌面。原环境直接点击互联首页的单 App 图标曾卡连接或显示异常。
@@ -151,7 +166,8 @@ Start with this README or the [Chinese version](#简体中文), then use the two
 | 单 App 投屏卡住或异常 | 原环境改用完整 Home screen+ 后跑通；不是通用修复保证。 |
 | 双开 App／多个账号 | 先请本人识别正确账号。角标含义依设备而定，不能照搬原机规则。 |
 | 中文粘贴成上一次内容 | 提交前核对完整输入。原手机表单 Ctrl+A 可用、Cmd+A 不可靠；其他界面未验证。 |
-| `noWindowsAvailable`、窗口丢失、截图失败 | 先重新查看当前窗口，不能直接判定锁屏；停止盲点，必要时关闭投屏并从 Home screen+ 重连。 |
+| 仍能截图却报 `noWindowsAvailable` | 检查完整手机窗口是否位于当前可见桌面。同普通桌面曾恢复一个阶段，但后续本人确认同桌面并开启置顶后仍失败，置前或重连也不足以稳定恢复。可见性字段缺失不等于已确认窗口离开桌面；当前复发原因仍未确证。 |
+| 输入后截图报错 | 先看新画面再决定是否重试。本轮曾出现截图报错但设置页已经打开，重复点击可能误操作。 |
 | 密码、Touch ID、屏幕使用时间限制 | 停止，由本人处理。本指南不要求修改限制或绕过验证。 |
 
 ### 安全边界
@@ -165,15 +181,15 @@ Start with this README or the [Chinese version](#简体中文), then use the two
 ### 断开与撤销
 
 1. 明确要求 AI 停止，确认没有继续输入，并通过其客户端结束电脑控制会话。
-2. 在小米互联服务关闭/停止 Home screen+，确认投屏消失，Mac 输入不再传到手机。关闭窗口不等于撤销长期配对。
+2. 在小米互联服务关闭/停止 Home screen+，确认投屏消失，主界面出现 **Turn on／开启**。这个可观察的关闭结果不能证明所有输入渠道断开，也不等于撤销长期配对。
 3. 不再需要互联时，通过厂商当前设备移除/取消配对界面处理。不再需要 AI 控制时，在 macOS 系统设置检查并撤销对应客户端的屏幕录制、辅助功能权限，名称依版本而异。
-4. 以上是建议的本人核验步骤，原说明没有记录断开与撤权实测。若不能确认断开，先停止相关客户端与互联应用，并在手机端核实，再离开设备。
+4. 后续复测已核验关闭投屏；没有取消配对、撤销权限，也没有在关闭后再发送输入来测试手机端行为。需要更彻底断开时，离开设备前另行核验。
 
 ### 已验证与未验证
 
 提供的现场说明报告过：打开 App、读取 App 信息、创建日历提醒并重新打开核对；也报告过现场确认的实体结果，但本项目不提供该操作路线。原始逐步记录、确切环境版本、重复次数、耗时及断开测试均未提供。
 
-本次整理只做离线文件检查，没有重新实测硬件，不宣称跨设备通用、稳定无人值守或支持 Windows/Linux/iOS。详见[测试与证据边界](#evidence-and-validation)。
+后续复测补充了真实 Mac／手机导航、两次可见运算结果、本地采样视频及投屏关闭核验。不宣称跨设备通用、稳定无人值守或支持 Windows/Linux/iOS。详见[测试与证据边界](#evidence-and-validation)。
 
 ### 贡献与许可
 
@@ -211,7 +227,8 @@ Blank template. Nothing below is a completed hardware test. Use public product/v
 - One action and fresh observation, summarized without private contents: `<OBSERVATION>`
 - Intended landing screen confirmed: `<YES_NO_UNCONFIRMED>`
 - Assistant control stopped: `<YES_NO_UNCONFIRMED>`
-- Mirroring stopped and input no longer reaches phone: `<YES_NO_UNCONFIRMED>`
+- Projection closed / Home screen+ Turn on visibly shown: `<YES_NO_UNCONFIRMED>`
+- Any separate phone-side test of post-close input: `<RESULT_OR_NOT_TESTED>`
 - Optional persistent pairing/permission revocation verified: `<YES_NO_NOT_TESTED>`
 - Overall outcome: `<PASS_FAIL_BLOCKED>`
 - Limitations / recoveries: `<SANITIZED_SUMMARY>`
@@ -222,7 +239,7 @@ Never include serial numbers, personal account names, local paths, IP/MAC addres
 
 ## Evidence and validation
 
-Prepared 2026-10-23. Historical operations and preparation-time checks are different evidence classes.
+Prepared on 2026-10-23 with follow-ups through 2026-10-25, America/New_York. Original field notes, initial offline preparation, and the later live follow-up are different evidence classes. The late follow-up crossed into 2026-10-24 UTC; this report uses the host's local date.
 
 ### Supplied field-note evidence
 
@@ -240,16 +257,22 @@ The maintainer supplied a Chinese practice note describing Mac + Xiaomi Intercon
 
 The field note does not establish the exact execution date, Mac/phone models, OS versions, app/client versions, permission toggle list, reliability rate, latency, usage cost, or successful permission revocation. None is inferred from unrelated device history.
 
-### This edition's preparation checks
+### Initial documentation preparation checks
 
 - Read the supplied field note and earlier publication handoff; recovered no reusable control scripts. No original implementation was invented to fill the gap.
 - Rewrote the method as original English/Chinese documentation plus a bounded prompt and blank report. No private tool schema, personal screenshots, third-party code, application binaries, or pairing artifacts are included.
 - Compared the vendor prerequisites with the official App Store listing; these remain vendor prerequisites, not test-environment metadata.
-- Performed local file allowlist, text-only, relative-link, sensitive-pattern, and clean Git-history checks. These checks do **not** validate phone control. The final two-file package has no missing local file links; hardware checks remain not run.
+- Performed local file allowlist, text-only, relative-link, sensitive-pattern, and clean Git-history checks. These initial offline checks did **not** validate phone control; the initial package contained only README and LICENSE.
 
-### Not performed for this edition
+### Live hardware follow-up
 
-No Mac/phone interaction, live CUA session, Calculator acceptance run, new calendar write, private app inspection, physical-control operation, disconnect/revocation test, or independent device replication. There are no measured success percentages, repeated-run samples, or benchmark results.
+The [earlier blocked stage](reports/2026-10-23-blocked-reproduction.md) records observable projection but failed coordinate input. The [recovery report](reports/2026-10-23-control-recovery.md) records the desktop-visibility comparison, recovered clicks and drag, Calculator results, local video processing, and visible projection closure. The final public package contains four text files: this README, LICENSE, and the two reports. It includes no video, raw capture, action log, private phone information, or native input implementation.
+
+The successful demonstration comprises 81 real screenshot samples. Its local 40.000-second cut shortens only three intervals without new samples and preserves all sample order. The local 65.033-second encoded version preserves the source timeline (65.016 seconds, rounded to video frames); held images cover unsampled intervals. This is an observed workflow record, not continuous capture or a performance benchmark.
+
+### Still unverified
+
+Independent device replication, unattended operation, Calculator version, persistent permission or pairing revocation, and a phone-side test that all post-close Mac input is blocked remain unverified. No new calendar write or physical-control operation was part of this follow-up. There are no measured success percentages or benchmark results. An experimental native input alternative was not verified and is disabled; local native diagnostics are read-only and are not distributed here.
 
 ### Reproduction acceptance
 
@@ -261,7 +284,7 @@ Follow the README's harmless app-launch procedure and fill in [the blank report]
 
 ### Original material in this repository
 
-This README and its embedded templates were newly prepared with AI assistance for the maintainer's requested open-source publication. Technical observations were derived from the maintainer-supplied practice note about their own Mac/Xiaomi mirroring session. The private note, addressee, complete conversations, and earlier handoff were not copied into this repository.
+This README and its embedded templates were newly prepared with AI assistance for the maintainer's requested open-source publication. Technical observations derive from the maintainer-supplied practice note and the later live follow-up on their own Mac/Xiaomi setup. The private note, addressee, complete conversations, raw captures, and earlier handoff were not copied into this repository.
 
 No independent phone-control source code was recovered from the supplied files. There is consequently no claim of ownership of a phone-control SDK or of the vendor/CUA implementation. No control scripts were added merely to imply a software framework exists.
 
@@ -303,15 +326,16 @@ For an accidental secret exposure, do not repeat the secret in a public issue. S
 
 ## Record a short demo
 
-**Status: proposed recording plan; no demonstration video has been recorded or published for this project.**
+**Current result:** local videos were prepared from 81 live screenshot samples of **7 + 5 = 12**, followed by projection closure and the visible **Home screen+ → Turn on** state. The short cut is 40.000 seconds; the original-timing encoded version is 65.033 seconds. They are not continuous system recordings. Neither video is published or included in this repository. The owner authorized sharing the sanitized short version on 2026-10-25, but the supported browser upload required an additional extension permission for local file URLs. That permission was not changed; video upload remains pending.
 
-Record one 30–45 second, owner-supervised run using only a harmless app such as Calculator:
+For a future reproduction, record an owner-supervised run using only a harmless app such as Calculator:
 
-1. Show the public model/version labels for the host OS, phone OS, mirroring app and AI client; exclude device identifiers, pairing information and account names.
-2. Show the authorized instruction to open Calculator through the existing full Home screen+ mirror.
-3. Show the resulting app screen and the owner’s confirmation. Keep waits or failures visible; label any cuts and do not present a simulated or accelerated action as a real-time hardware result.
-4. Stop AI control and verify that mirroring/input has ended. Record any unconfirmed step as unconfirmed.
+1. Record verified public model/version labels separately; mark missing values unverified. Exclude device identifiers, pairing information and account names.
+2. Use the existing full Home screen+ mirror, perform a harmless calculation, and inspect its result.
+3. Label the capture method and every timing edit. For sampled screenshots, disclose held frames and intervals with no new samples. Keep failed takes separate; never represent them as successful runs.
+4. Close the projection and capture its resulting status. State precisely what ended; do not equate closure with unpairing or permission revocation.
+5. Review every frame for prior history, notifications, account names and locations before sharing. Keep raw captures private. Publishing remains a separate owner decision.
 
 For a reproduction report, note the versions and the actual outcome using the template above. A recording does not establish broad compatibility or unattended reliability.
 
-录制建议：用 30–45 秒展示“环境版本 → 明确指令 → AI 打开计算器 → 核验画面 → 结束并确认断开”。此处只是录制计划，当前没有已发布演示视频或新增硬件测试。
+本轮已完成真实操作的截图采样演示与本地脱敏剪辑：短版 40 秒，仅缩短三段无新采样的等待，保留全部 81 帧顺序；原时序版约 65.033 秒，采样空档保持上一张真实画面。两者均不是连续系统录屏。画面中可核对 **7 + 5 = 12** 和关闭投屏后的 **Turn on** 状态。2026-10-25 已获本人授权分享脱敏短版，但受支持的浏览器上传要求新增本地文件访问权限；本次没有改权限，上传待完成。公开包仍不含视频或私人原始材料。
