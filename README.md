@@ -13,6 +13,8 @@ A practical record of operating a Xiaomi phone from a Mac through **Xiaomi Inter
 
 **2026-10-24 reliability follow-up:** coordinate input failed again during a later session, including after the owner reported the same-desktop arrangement and enabled the mirror pushpin. Live screenshots, menu navigation and some keyboard input still worked. Neither same-desktop placement nor pinning is a verified durable fix. The successful Calculator demonstration remains valid evidence of that completed run.
 
+**2026-10-25 continuation:** after the owner opened and brought forward the full mirror, the original CUA interface completed repeated coordinate clicks and drags through usage statistics, system information, storage, notifications and battery pages, then returned to Home. No `noWindowsAvailable` error occurred in this continuation. This observation does not establish foregrounding as the cause or a sufficient fix. My device visibly reported **HyperOS 3.0.5.0.VMRCNXM**; Calculator version remains unverified. See the [latest continuation](reports/2026-10-23-control-recovery.md#successful-continuation--2026-10-25).
+
 ## Before you start
 
 This guide is for **Mac users with a compatible Xiaomi phone who already have an authorized AI client capable of controlling native Mac windows**. It describes AI phone control through an existing Home screen+ mirror; it does not install or supply that AI capability.
@@ -25,7 +27,7 @@ This guide is for **Mac users with a compatible Xiaomi phone who already have an
 
 The original field note omitted the AI client build. The follow-up records installed host metadata, but does not establish public availability or subscription eligibility. **Do not buy a subscription based on this guide alone.** Confirm current native computer-use availability in that client’s official documentation and your own installation.
 
-**Measured follow-up setup:** MacBook Pro (`MacBookPro17,1`), macOS 26.6.2 (25G83), Xiaomi Interconnectivity 3.0.200 (566), and Redmi Note 12 Turbo. Installed host app metadata reads ChatGPT 26.1016.62342 (21477); the current session exposed native Mac window observation and input. Phone OS, phone interconnectivity components, and Calculator versions remain **unverified**. The [environment table](reports/2026-10-23-blocked-reproduction.md#measured-environment) records the evidence limits. If you try the workflow, complete the [sanitized report](#sanitized-reproduction-report).
+**Measured follow-up setup:** MacBook Pro (`MacBookPro17,1`), macOS 26.6.2 (25G83), Xiaomi Interconnectivity 3.0.200 (566), and Redmi Note 12 Turbo. Installed host app metadata reads ChatGPT 26.1016.62342 (21477); the current session exposed native Mac window observation and input. Phone OS was later verified in My device on 2026-10-25 as **HyperOS 3.0.5.0.VMRCNXM**. Phone interconnectivity components and Calculator versions remain **unverified**. The [environment table](reports/2026-10-23-blocked-reproduction.md#measured-environment) records the evidence limits. If you try the workflow, complete the [sanitized report](#sanitized-reproduction-report).
 
 For readers searching for **AI control of an Android phone on Mac**, this practice note covers Xiaomi Home screen+ specifically. Other Android brands, iPhone workflows, remote unattended control, and universal Android automation are outside its verified scope.
 
@@ -34,7 +36,7 @@ For readers searching for **AI control of an Android phone on Mac**, this practi
 | Dependency | Requirement and evidence |
 | --- | --- |
 | Host | A Mac with Xiaomi Interconnectivity installed from the [official App Store listing](https://apps.apple.com/us/app/xiaomi-interconnectivity/id6673908449?platform=mac). The follow-up used the measured Mac setup above. |
-| Phone | A Xiaomi phone on which Home screen+ actually works. The follow-up observed a Redmi Note 12 Turbo; its OS version remains unverified. Do not infer universal Redmi/POCO support. |
+| Phone | A Xiaomi phone on which Home screen+ actually works. The follow-up observed a Redmi Note 12 Turbo, with HyperOS 3.0.5.0.VMRCNXM verified in My device on 2026-10-25. Do not infer universal Redmi/POCO support. |
 | Vendor compatibility | The listing checked on 2026-10-23 states HyperOS 2, Device interconnectivity services ≥16.00.50 and Xiaomi Share ≥3.3.0. These are published prerequisites, **not the measured versions of the original test** or a guarantee of compatibility. Check the current listing for your device. |
 | Connection | The owner must first make the vendor's normal connection and Home screen+ work manually. This project does not replace pairing or authentication. |
 | Assistant | An already-authorized computer-use environment that can observe and interact with **native Mac windows**. A text-only chat or browser-only controller is insufficient. Installed follow-up host metadata is recorded above; access is not supplied here. |
@@ -114,6 +116,8 @@ Start with this README or the [Chinese version](#简体中文), then use the two
 
 **2026-10-24 稳定性续测：** 后续会话再次出现坐标输入失败；本人确认同桌面并开启图钉后仍失败，实时截图、菜单导航及部分键盘输入继续可用。因此，同桌面与置顶均不能当作已验证的长期修复。此前完成的计算器演示仍然是那一轮操作成功的证据。
 
+**2026-10-25 续测：** 本人打开完整投屏并置前后，原 CUA 连续坐标点击和拖动成功，助手独立进入使用统计、系统、存储、通知和电池页面，最后回到手机主屏幕。本次未出现 `noWindowsAvailable`，但不能据此把置前认定为根因或充分修复，也不承诺无人值守。My device 已核验系统为 **HyperOS 3.0.5.0.VMRCNXM**，计算器版本仍未核实。详见[最新续测记录](reports/2026-10-23-control-recovery.md#successful-continuation--2026-10-25)。
+
 ### 开始前：先确认这三项
 
 适用人群：**使用 Mac、兼容小米手机，并已拥有原生 Mac 窗口操作能力的 AI 客户端的用户。** 本文分享“小米互联完整投屏 + AI 观察、操作与核验”的方法。
@@ -124,14 +128,14 @@ Start with this README or the [Chinese version](#简体中文), then use the two
 
 原现场说明没有记录 AI 客户端版本，后续复测补充了已安装宿主的元数据；这些信息不能证明公开可用性或订阅资格。**不要仅凭本指南购买订阅**；先核对该客户端的官方说明及自己安装环境中的实际能力。
 
-复测环境：MacBook Pro（`MacBookPro17,1`）、macOS 26.6.2（25G83）、小米互联服务 3.0.200（566）、Redmi Note 12 Turbo；已安装宿主应用元数据显示 ChatGPT 26.1016.62342（21477），当前会话具备原生 Mac 窗口观察和输入工具。手机系统、手机互联组件及计算器版本仍未核实。详见[环境表](reports/2026-10-23-blocked-reproduction.md#measured-environment)。复现成功或遇到阻塞，都可以按[测试模板](#sanitized-reproduction-report)反馈。
+复测环境：MacBook Pro（`MacBookPro17,1`）、macOS 26.6.2（25G83）、小米互联服务 3.0.200（566）、Redmi Note 12 Turbo；已安装宿主应用元数据显示 ChatGPT 26.1016.62342（21477），当前会话具备原生 Mac 窗口观察和输入工具。2026-10-25 在 My device 核验手机系统为 HyperOS 3.0.5.0.VMRCNXM；手机互联组件及计算器版本仍未核实。详见[环境表](reports/2026-10-23-blocked-reproduction.md#measured-environment)。复现成功或遇到阻塞，都可以按[测试模板](#sanitized-reproduction-report)反馈。
 
 ### 依赖与权限
 
 | 项目 | 要求与证据边界 |
 | --- | --- |
 | Mac | 安装[小米官方 App Store 应用](https://apps.apple.com/us/app/xiaomi-interconnectivity/id6673908449?platform=mac)。后续复测的 Mac 型号和系统版本见上文。 |
-| 手机 | 需要能实际运行 Home screen+ 的小米手机。后续复测观察到 Redmi Note 12 Turbo，系统版本仍未核实，不能推断所有 Redmi/POCO 都支持。 |
+| 手机 | 需要能实际运行 Home screen+ 的小米手机。后续复测观察到 Redmi Note 12 Turbo；2026-10-25 在 My device 核验 HyperOS 3.0.5.0.VMRCNXM，不能推断所有 Redmi/POCO 都支持。 |
 | 厂商兼容要求 | 2026-10-23 查到的应用说明列出 HyperOS 2、跨设备互联服务 ≥16.00.50、小米互传 ≥3.3.0。这是厂商要求，不是原实测版本，也不保证你的设备可用；以当前官方说明为准。 |
 | 连接 | 先由本人通过厂商正常流程完成连接，确认能手动操作完整投屏。本项目不替代配对和身份验证。 |
 | AI 环境 | 必须已经具备观察与操作 Mac 原生窗口的电脑操作能力。纯文字聊天、只能控制网页的工具不足以复现；后续复测记录了宿主元数据，本项目不提供该能力。 |
@@ -235,7 +239,7 @@ Never include serial numbers, personal account names, local paths, IP/MAC addres
 
 ## Evidence and validation
 
-Prepared and followed up on 2026-10-23, America/New_York. Original field notes, initial offline preparation, and the later live follow-up are different evidence classes. The late follow-up crossed into 2026-10-24 UTC; this report uses the host's local date.
+Prepared on 2026-10-23 with follow-ups through 2026-10-25, America/New_York. Original field notes, initial offline preparation, and the later live follow-up are different evidence classes. The late follow-up crossed into 2026-10-24 UTC; this report uses the host's local date.
 
 ### Supplied field-note evidence
 
@@ -268,7 +272,7 @@ The successful demonstration comprises 81 real screenshot samples. Its local 40.
 
 ### Still unverified
 
-Independent device replication, unattended operation, phone OS and Calculator versions, persistent permission or pairing revocation, and a phone-side test that all post-close Mac input is blocked remain unverified. No new calendar write or physical-control operation was part of this follow-up. There are no measured success percentages or benchmark results. An experimental native input alternative was not verified and is disabled; local native diagnostics are read-only and are not distributed here.
+Independent device replication, unattended operation, Calculator version, persistent permission or pairing revocation, and a phone-side test that all post-close Mac input is blocked remain unverified. No new calendar write or physical-control operation was part of this follow-up. There are no measured success percentages or benchmark results. An experimental native input alternative was not verified and is disabled; local native diagnostics are read-only and are not distributed here.
 
 ### Reproduction acceptance
 
@@ -322,7 +326,7 @@ For an accidental secret exposure, do not repeat the secret in a public issue. S
 
 ## Record a short demo
 
-**Current result:** local videos were prepared from 81 live screenshot samples of **7 + 5 = 12**, followed by projection closure and the visible **Home screen+ → Turn on** state. The short cut is 40.000 seconds; the original-timing encoded version is 65.033 seconds. They are not continuous system recordings. Neither video is published or included in this repository.
+**Current result:** local videos were prepared from 81 live screenshot samples of **7 + 5 = 12**, followed by projection closure and the visible **Home screen+ → Turn on** state. The short cut is 40.000 seconds; the original-timing encoded version is 65.033 seconds. They are not continuous system recordings. Neither video is published or included in this repository. The owner authorized sharing the sanitized short version on 2026-10-25, but the supported browser upload required an additional extension permission for local file URLs. That permission was not changed; video upload remains pending.
 
 For a future reproduction, record an owner-supervised run using only a harmless app such as Calculator:
 
@@ -334,4 +338,4 @@ For a future reproduction, record an owner-supervised run using only a harmless 
 
 For a reproduction report, note the versions and the actual outcome using the template above. A recording does not establish broad compatibility or unattended reliability.
 
-本轮已完成真实操作的截图采样演示与本地脱敏剪辑：短版 40 秒，仅缩短三段无新采样的等待，保留全部 81 帧顺序；原时序版约 65.033 秒，采样空档保持上一张真实画面。两者均不是连续系统录屏。画面中可核对 **7 + 5 = 12** 和关闭投屏后的 **Turn on** 状态。视频未发布，公开包不含视频或私人原始材料。
+本轮已完成真实操作的截图采样演示与本地脱敏剪辑：短版 40 秒，仅缩短三段无新采样的等待，保留全部 81 帧顺序；原时序版约 65.033 秒，采样空档保持上一张真实画面。两者均不是连续系统录屏。画面中可核对 **7 + 5 = 12** 和关闭投屏后的 **Turn on** 状态。2026-10-25 已获本人授权分享脱敏短版，但受支持的浏览器上传要求新增本地文件访问权限；本次没有改权限，上传待完成。公开包仍不含视频或私人原始材料。
