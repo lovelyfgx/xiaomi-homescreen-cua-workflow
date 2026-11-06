@@ -26,7 +26,7 @@ The [official macOS Computer Use guide](https://learn.chatgpt.com/use-cases/use-
 
 续测再次失败，因此不能把同桌面或图钉写成稳定解决方法。置顶窗口可能不在普通窗口层，诊断不应把这类窗口过滤掉；可见性字段缺失要记为未知。后台使用是产品支持的方式，当前这套投屏环境的点击稳定性仍待解决。
 
-## What restored input in the earlier phase
+## Earlier input recovery and window visibility
 
 The phone mirror could be captured even while its Mac window was absent from the current visible desktop. Native menus and some keyboard input also worked in that condition, while coordinate clicks repeatedly returned `noWindowsAvailable`.
 
@@ -36,7 +36,7 @@ The owner first brought the full phone window forward. The visibility flag becam
 
 The owner then exited the assistant's full-screen desktop space and placed the assistant and phone mirror together on one ordinary desktop. The phone remained on-screen even when the assistant was frontmost. Multiple direct phone clicks, a drag gesture, and six consecutive Calculator button presses succeeded through the original computer-use interface. Calculator visibly returned **12 × 34 = 408**.
 
-This before/after sequence supports **current desktop-space visibility** as a major factor in this run. It does not establish the cause of every `noWindowsAvailable` error, nor prove that visibility is the only condition required. No version change or new permission grant was needed for this recovery.
+Input resumed after both windows were placed on the same ordinary desktop. Window visibility and foreground state also changed during the sequence, so the specific cause of recovery remains unconfirmed. The later same-desktop and pinning trials still encountered failures. No version change or new permission grant was made during this recovery.
 
 ## Demonstration and session ending
 
@@ -83,7 +83,7 @@ The videos remain local for owner review. This public package includes no video,
 ## Recovery sequence to reuse
 
 1. Open the **full Home screen+** phone projection and complete any normal owner authentication.
-2. If input is blocked, inspect the full mirror and current desktop visibility, including nonstandard window layers when pinning is enabled. Same-desktop placement restored an earlier phase but was not sufficient in later tests. A readable screenshot alone is not proof of working input.
+2. If input is blocked, inspect the full mirror and current desktop visibility, including nonstandard window layers when pinning is enabled. Input resumed after same-desktop placement in an earlier run and failed again in later trials. Verify input by observing the result of a harmless action.
 3. Read the current window state and a fresh phone image. Verify one harmless action before starting the actual task; do not reuse coordinates after a layout or connection change.
 4. When a capture error occurs after an action, inspect the new phone state before retrying. During this run, one capture error occurred after Settings had already opened.
 5. Distinguish window visibility from an explicit Mac-lock or password/Touch ID prompt. Authentication requires the owner. After unlock, inspect the current state before continuing.
@@ -94,7 +94,7 @@ No new permission, network/security setting change, message sending or video pub
 
 ## 中文记录
 
-本轮已恢复真实手机操作。关键对照是：手机窗口虽然能被截图，但不在当前桌面时，坐标点击反复失败；本人退出助手全屏、让助手与完整手机投屏同处普通桌面后，连续点击和拖动恢复。先验证 **12 × 34 = 408**；随后 Mac 明确锁定，由本人解锁后继续。这个恢复结论适用于本轮观察，不能解释所有窗口错误。
+早期测试中，手机窗口离开当前桌面时仍能截图，坐标点击却反复失败。本人退出助手全屏、让助手与完整手机投屏同处普通桌面后，连续点击和拖动恢复。期间窗口可见性和前台状态也有变化，恢复的具体原因仍待确认。先验证 **12 × 34 = 408**，随后 Mac 明确锁定，由本人解锁后继续。
 
 合格演示验证了 **7 + 5 = 12**，结束时关闭投屏，并用新画面确认 **Home screen+ → Turn on**。本地已生成 40 秒短版和约 65.033 秒原时序版。两者来自 81 张真实操作的实时截图采样，**不是连续系统录屏**。短版只缩短三段无新采样的等待，全部源帧保留且顺序不变；原时序版在空档保持上一张真实画面。历史计算、账号、位置等内容已从交付视频中遮盖或裁除，失败尝试没有混入合格演示。
 
