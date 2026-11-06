@@ -44,9 +44,14 @@ For readers searching for **AI control of an Android phone on Mac**, this practi
 
 No ADB, root, app API integration, or chat-database access was used in the recorded method. This does not mean those are the requirements of other products or platforms.
 
+### Phone availability and heat
+
+- **Use a tablet where the task allows it.** Xiaomi documents Mac display extension on supported tablets running HyperOS 3 or later, such as the Xiaomi Pad 8, and file sharing between compatible Xiaomi and Apple devices. These options let you handle some work and file transfers without using your primary phone. This workflow verified Home screen+ control on a phone. Using the tablet itself as the device mirrored and controlled from the Mac remains unverified here. Check requirements and availability for your model and region. [Xiaomi interconnectivity guide](https://hyperos.mi.com/continuity/abilities/ab0016) · [Xiaomi Pad 8](https://www.mi.com/global/product/xiaomi-pad-8/)
+- **Heat in practice.** The maintainer reports that warmth did not noticeably affect their own use. No temperature measurements or sustained-load tests were taken.
+
 ## Smallest reproduction: launch and verify one harmless app
 
-This procedure uses the full phone projection. The follow-up verified Calculator navigation, arithmetic, and projection closure in one setup. If coordinate input fails, inspect current window visibility; moving both windows onto one ordinary desktop restored one earlier phase, but later failures recurred. Verify one harmless action in the current session.
+This procedure uses the full phone projection. The follow-up verified Calculator navigation, arithmetic, and projection closure in one setup. If coordinate input fails, inspect current window visibility. Input resumed after both windows were placed on one ordinary desktop in an earlier run, and failures recurred later. Verify one harmless action in the current session.
 
 1. Use your own devices, remain present, and put the phone on a non-sensitive home page. Choose a harmless target such as Calculator; avoid exposing notifications, private chats, or account pages to the assistant.
 2. Open Xiaomi Interconnectivity on the Mac. Complete its normal connection yourself if needed. Choose **Home screen+ → On / 开启** to open the **full phone home screen**. In the recorded setup, launching an individual app from the interconnectivity home page was unreliable.
@@ -67,7 +72,7 @@ For a later, separately authorized write test, the original notes describe creat
 | Individual-app projection stalls or displays incorrectly | Return to the vendor app and try the full Home screen+ window. This is one setup's observation, not a universal fix. |
 | An app has multiple account/clone icons | Have the owner identify the intended account. Badge conventions are device-specific; never assume an unbadged icon is always the main account. |
 | Pasted Chinese text is stale | Inspect the entire field before committing anything. The original setup sometimes pasted previous clipboard contents. Ctrl+A worked in its phone form; Cmd+A was unreliable. These shortcuts are not universally tested. |
-| `noWindowsAvailable` while a mirror image is still readable | Inspect whether the full phone window is on the current visible desktop. Same-desktop placement restored an earlier phase, but later input failed again even after that arrangement and pinning were reported. Raising/reconnecting alone was also insufficient. Distinguish a missing visibility flag from an observed off-screen flag; the current failure cause remains unconfirmed. |
+| `noWindowsAvailable` while a mirror image is still readable | Inspect whether the full phone window is on the current visible desktop. An earlier run resumed after both windows were placed on the same desktop. Input failed again in later same-desktop and pinning trials. Raising or reconnecting also failed in some trials. Distinguish a missing visibility flag from an observed off-screen flag. The cause remains unconfirmed. |
 | Screenshot failure after an input action | Inspect a fresh phone image before repeating the action. This run included a capture error after Settings had already opened. |
 | Layout, scale, page, or connection changed | Observe again. Coordinates from an earlier frame are invalid evidence. |
 | Password/Touch ID, screen-time restriction, or other block | Stop and let the owner handle it. This guide does not require changing restrictions or circumventing authentication. |
@@ -143,9 +148,14 @@ Start with this README or the [Chinese version](#简体中文), then use the two
 
 原方法未使用 ADB、Root、App 接口或聊天数据库读取。不要据此推论其他产品的实现。
 
+#### 主手机占用与发热
+
+- **能分给平板的任务。** 小米官方说明列出部分 HyperOS 3 及以上的小米平板可以充当 Mac 的扩展屏，例如小米平板 8。兼容设备之间也可互传文件，这样部分工作可以分给平板，腾出主手机。本项目实测的是从 Mac 控制小米手机，平板作为投屏和控制目标仍待验证。具体功能视机型、版本与地区而定。 [小米官方互联说明](https://hyperos.mi.com/continuity/abilities/ab0016) · [小米平板 8](https://www.mi.com/global/product/xiaomi-pad-8/)
+- **发热体验。** 维护者在自己的使用中没有感觉到发热明显影响操作。此次记录没有测温或持续负载测试。
+
 ### 最小复现：打开一个无敏感内容的 App 并核验
 
-后续复测已在单套环境中验证计算器导航、运算结果和关闭投屏。坐标输入失败时先检查窗口可见性；同普通桌面曾恢复一个阶段，后续仍复发，必须在当前会话核验一次无敏感动作。
+后续复测已在单套环境中验证计算器导航、运算结果和关闭投屏。坐标输入失败时先检查窗口可见性。早期一次测试中，两窗口移到同一普通桌面后输入恢复，后来又出现失败。先在当前会话核验一次无敏感动作。
 
 1. 使用自己的设备，本人在旁。将手机停在无敏感内容的桌面，选计算器等简单目标；避免让 AI 看见通知、私人聊天或账号页。
 2. 在 Mac 打开小米互联服务，按正常方式连接。选择 **Home screen+ → On／开启**，进入完整手机桌面。原环境直接点击互联首页的单 App 图标曾卡连接或显示异常。
@@ -166,7 +176,7 @@ Start with this README or the [Chinese version](#简体中文), then use the two
 | 单 App 投屏卡住或异常 | 原环境改用完整 Home screen+ 后跑通；不是通用修复保证。 |
 | 双开 App／多个账号 | 先请本人识别正确账号。角标含义依设备而定，不能照搬原机规则。 |
 | 中文粘贴成上一次内容 | 提交前核对完整输入。原手机表单 Ctrl+A 可用、Cmd+A 不可靠；其他界面未验证。 |
-| 仍能截图却报 `noWindowsAvailable` | 检查完整手机窗口是否位于当前可见桌面。同普通桌面曾恢复一个阶段，但后续本人确认同桌面并开启置顶后仍失败，置前或重连也不足以稳定恢复。可见性字段缺失不等于已确认窗口离开桌面；当前复发原因仍未确证。 |
+| 仍能截图却报 `noWindowsAvailable` | 检查完整手机窗口是否位于当前可见桌面。早期一次测试在两窗口同桌面后恢复，后续同桌面和图钉对照中均出现失败，置前或重连也有失败记录。区分可见性字段缺失和已观测到的窗口离屏。原因仍待确认。 |
 | 输入后截图报错 | 先看新画面再决定是否重试。本轮曾出现截图报错但设置页已经打开，重复点击可能误操作。 |
 | 密码、Touch ID、屏幕使用时间限制 | 停止，由本人处理。本指南不要求修改限制或绕过验证。 |
 
